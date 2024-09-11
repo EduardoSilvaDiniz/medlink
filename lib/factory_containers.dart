@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/buttons.dart';
-import 'package:medlink/searchbar.dart';
 
 class FactoryContainers {
-  static double sizeHeight = 50;
+  double sizeHeight = 50;
 
-  static List<Widget> containerButtons(BuildContext context) {
+  List<Widget> containerButtons(BuildContext context) {
     return <Widget>[
-      Buttons.createButton(context),
-      Buttons.createButton(context),
+      // Buttons.createButton(context),
+      // Buttons.createButton(context),
     ];
   }
 
-  static List<Widget> containerTopBody(BuildContext context) {
+  List<Widget> containerTopBody(BuildContext context) {
     return <Widget>[
       const Align(
         alignment: Alignment.center,
@@ -21,8 +19,52 @@ class FactoryContainers {
           style: TextStyle(fontSize: 24),
         ),
       ),
+      // SearchBarCustom.buildSearchBar(),
+    ];
+  }
 
-      SearchBarCustom.buildSearchBar(),
+  List<Widget> construcaoDosBotoesEmFormaGrid(BuildContext context) {
+    //   GridView.count(
+    return <Widget>[
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: const EdgeInsets.all(8.0),
+          height: 50,
+          width: 50,
+          color: Colors.blue,
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: const EdgeInsets.all(8.0),
+          height: 50,
+          width: 50,
+          color: Colors.blue,
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ButtonTheme(
+          child: ElevatedButton(
+            onPressed: () {},
+            child: const Icon(
+              Icons.phone,
+              size: 150,
+            ),
+          ),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: const EdgeInsets.all(8.0),
+          height: 50,
+          width: 50,
+          color: Colors.blue,
+        ),
+      ),
     ];
   }
 }

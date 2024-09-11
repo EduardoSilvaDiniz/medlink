@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SearchBarCustom {
-  static Widget buildSearchBar() {
+  Widget build() {
     return SearchAnchor(
         builder: (BuildContext context, SearchController controller) {
       return SearchBar(

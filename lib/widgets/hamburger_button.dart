@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HamburgerButton {
-  static Widget buildHambugerButton() {
+class HamburgerButton extends StatelessWidget{
+  const HamburgerButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
