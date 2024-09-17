@@ -1,44 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:medlink/widgets/grid_buttons.dart';
+import 'package:medlink/widgets/searchbar.dart';
 
-class Factory extends ListBody {
-  const Factory({super.key});
-  final int crossAxisAlignment = 2;
+class Factory extends StatelessWidget {
   final bool shrinkWrap = true;
+  final int crossAxisAlignment = 2;
 
-  List<Widget> build() {
-    return <Widget>[
-      Row(
-        children: _construcaoDoFilhoRow(),
-      ),
+  const Factory({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
       Column(
         children: _construcaoDoFilhoColumn(),
       ),
+      const Spacer(),
       GridView.count(
         shrinkWrap: shrinkWrap,
         crossAxisCount: crossAxisAlignment,
         children: _construcaoDoFilhoGridView(),
       ),
-    ];
-  }
-
-  List<Widget> _construcaoDoFilhoRow() {
-    return <Widget>[
-      //barraDePesquisa()
-      //Icone()
-    ];
+    ]);
   }
 
   List<Widget> _construcaoDoFilhoColumn() {
     return <Widget>[
-      //barraDePesquisa()
-      //Icone()
+      const Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          "Olá, (Usuario).",
+          style: TextStyle(fontSize: 24, color: Colors.blue),
+        ),
+      ),
+      const SearchBarCustom(),
     ];
   }
 
   List<Widget> _construcaoDoFilhoGridView() {
-    return <Widget>[
-      //barraDePesquisa()
-      //Icone()
-    ];
+    return GridButtons.build();
   }
 }

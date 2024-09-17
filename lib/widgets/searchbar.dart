@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SearchBarCustom {
-  Widget build() {
+class SearchBarCustom extends StatelessWidget{
+  const SearchBarCustom({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return SearchAnchor(
         builder: (BuildContext context, SearchController controller) {
       return SearchBar(
@@ -15,8 +18,8 @@ class SearchBarCustom {
           controller.openView();
         },
         leading: const Align(
-          alignment: Alignment.centerRight,
-          child: Icon(Icons.search),
+          alignment: Alignment.topRight,
+          child: Icon(Icons.search, color: Colors.blue),
         ),
       );
     }, suggestionsBuilder: (BuildContext context, SearchController controller) {
