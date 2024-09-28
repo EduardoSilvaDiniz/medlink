@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/screens/man_page.dart';
+import '../screens/man_page.dart';
 
 void main() {
   runApp(const MyApp());

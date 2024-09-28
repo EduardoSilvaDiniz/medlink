@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/screens/page_fake.dart';
+import '../../screens/page_fake.dart';
 
 class Buttons {
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
