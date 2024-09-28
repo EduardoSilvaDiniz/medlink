@@ -17,7 +17,7 @@ class CustomBottomNavBar extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black26,
+            color: Colors.blue,
             blurRadius: 8.0,
             offset: Offset(0, -2),
           ),
@@ -40,8 +40,9 @@ class CustomBottomNavBar extends StatelessWidget {
         ],
         currentIndex: selectedIndex,
         onTap: onItemTapped,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
+        backgroundColor: Colors.blue,
         type: BottomNavigationBarType.fixed,
       ),
     );

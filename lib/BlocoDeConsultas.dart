@@ -6,8 +6,8 @@ class ConsultationSection extends StatefulWidget {
 }
 
 class _ConsultationSectionState extends State<ConsultationSection> {
-  bool _isExpanded1 = false; // Controle para a primeira seção
-  bool _isExpanded2 = false; // Controle para a segunda seção
+  bool _isExpanded1 = false;
+  bool _isExpanded2 = false;
 
   @override
   Widget build(BuildContext context) {

@@ -6,8 +6,8 @@ class NovaConsultationSection extends StatefulWidget {
 }
 
 class _NovaConsultationSectionState extends State<NovaConsultationSection> {
-  bool _isExpanded1 = false; // Controle para a primeira seção
-  bool _isExpanded2 = false; // Controle para a segunda seção
+  bool _isExpanded1 = false;
+  bool _isExpanded2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,12 @@ class _NovaConsultationSectionState extends State<NovaConsultationSection> {
           setState(() {
             _isExpanded1 = value;
           });
-        }, Colors.grey[300] ?? Colors.grey), // Cor cinza
+        }, Colors.grey[300] ?? Colors.grey),
         _buildConsultationTile('Cardiologia', 'Dr. Maria Oliveira', '2024-09-22 15:00', _isExpanded2, (value) {
           setState(() {
             _isExpanded2 = value;
           });
-        }, Colors.grey[300] ?? Colors.grey), // Cor cinza
+        }, Colors.grey[300] ?? Colors.grey),
       ],
     );
   }
@@ -31,7 +31,7 @@ class _NovaConsultationSectionState extends State<NovaConsultationSection> {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 16.0),
       decoration: BoxDecoration(
-        color: color, // Usando a cor passada
+        color: color,
         borderRadius: BorderRadius.circular(20.0),
       ),
       padding: EdgeInsets.all(16.0),
@@ -73,7 +73,7 @@ class _NovaConsultationSectionState extends State<NovaConsultationSection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(doctor, style: TextStyle(color: Colors.black, fontSize: 18.0)),
-          Text('Data: $dateTime', style: TextStyle(color: Colors.black)), // Adicionando a hora
+          Text('Data: $dateTime', style: TextStyle(color: Colors.black)),
           SizedBox(height: 16.0),
           Align(
             alignment: Alignment.centerRight,
@@ -85,8 +85,8 @@ class _NovaConsultationSectionState extends State<NovaConsultationSection> {
                 padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                 backgroundColor: Colors.grey, // Fundo cinza
               ),
-              icon: Icon(Icons.insert_drive_file, color: Colors.black), // Ícone de arquivo
-              label: Text('Relatório', style: TextStyle(color: Colors.black)), // Texto do botão
+              icon: Icon(Icons.insert_drive_file, color: Colors.black),
+              label: Text('Relatório', style: TextStyle(color: Colors.black)),
             ),
           ),
         ],

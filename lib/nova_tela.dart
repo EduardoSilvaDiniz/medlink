@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'custom_bottom_nav_bar.dart';
-import 'CustomSearchBar.dart';
-import 'NovaConsultationSection.dart'; // Importando a nova seção
+import 'BarraDeBusca.dart';
+import 'BarraInferiorDeNavegacao.dart';
+import 'ListaConsultas.dart'; // Importando a nova seção
 
 class NovaTela extends StatelessWidget {
   @override

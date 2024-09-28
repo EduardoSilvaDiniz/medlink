@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'nova_tela.dart'; // Certifique-se de importar sua nova tela
+import 'nova_tela.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.blue[900], // Azul escuro
+        color: Colors.blue[900],
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -20,38 +20,38 @@ class MyDrawer extends StatelessWidget {
                 ),
               ),
               decoration: BoxDecoration(
-                color: Colors.blue[800], // Um tom um pouco mais claro
+                color: Colors.blue[800],
               ),
             ),
             ListTile(
               leading: Icon(Icons.home, color: Colors.white),
               title: Text('Início', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Fecha o menu
+                Navigator.pop(context);
               },
             ),
             ListTile(
               leading: Icon(Icons.person, color: Colors.white),
               title: Text('Perfil', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Fecha o menu
+                Navigator.pop(context);
               },
             ),
             ListTile(
               leading: Icon(Icons.settings, color: Colors.white),
               title: Text('Configurações', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Fecha o menu
+                Navigator.pop(context);
               },
             ),
-            Divider(color: Colors.white), // Divisor
+            Divider(color: Colors.white),
             ListTile(
               leading: Icon(Icons.new_releases, color: Colors.white),
               title: Text('Nova Tela', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NovaTela()), // Navega para NovaTela
+                  MaterialPageRoute(builder: (context) => NovaTela()),
                 );
               },
             ),
@@ -59,8 +59,8 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(Icons.logout, color: Colors.white),
               title: Text('Sair', style: TextStyle(color: Colors.white)),
               onTap: () {
-                // Ação de logout
-                Navigator.pop(context); // Fecha o menu
+
+                Navigator.pop(context);
               },
             ),
           ],

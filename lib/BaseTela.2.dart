@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'CustomSearchBar.dart';
-import 'consultation_section.dart';
+import 'BarraDeBusca.dart';
 
-abstract class BaseScreen extends StatelessWidget {
+abstract class BaseScreen extends StatefulWidget {
+  @override
+  _BaseScreenState createState() => _BaseScreenState();
+}
+
+class _BaseScreenState extends State<BaseScreen> {
   final TextEditingController searchController = TextEditingController();
 
   void onSearch() {
@@ -10,10 +14,16 @@ abstract class BaseScreen extends StatelessWidget {
   }
 
   @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tela Base'),
+        title: const Text('Tela Base'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,16 +34,19 @@ abstract class BaseScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(
+            child: const Text(
               'Consultas Agendadas:',
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
           ),
-          Expanded(child: buildContent()), // Método abstrato para o conteúdo
+          Expanded(child: buildContent()),
         ],
       ),
     );
   }
 
-  Widget buildContent(); // Método abstrato para subclasses
+  Widget buildContent() {
+    // TODO: implement buildContent
+    throw UnimplementedError();
+  }
 }

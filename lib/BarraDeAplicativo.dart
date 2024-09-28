@@ -18,7 +18,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               if (onMenuPressed != null) {
                 onMenuPressed!();
               } else {
-                Scaffold.of(context).openDrawer(); // Abre o Drawer
+                Scaffold.of(context).openDrawer();
               }
             },
           );
@@ -37,5 +37,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(60); // Altura preferida
+  Size get preferredSize => Size.fromHeight(60);
 }

@@ -20,7 +20,7 @@ class CustomSearchBar extends StatelessWidget {
           border: OutlineInputBorder(),
           suffixIcon: IconButton(
             icon: Icon(Icons.search),
-            onPressed: onSearch, // Chama a função de pesquisa
+            onPressed: onSearch,
           ),
         ),
       ),

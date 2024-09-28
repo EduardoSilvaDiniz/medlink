@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'Myappbar.dart';
-import 'my_drawer.dart';
-import 'custom_bottom_nav_bar.dart';
-import 'CustomSearchBar.dart';
-import 'consultation_section.dart';
+import 'BarraDeAplicativo.dart';
+import 'MenuLateral.dart';
+import 'BarraDeBusca.dart';
+import 'BarraInferiorDeNavegacao.dart';
+import 'BlocoDeConsultas.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Título "Consultas Agendadas"
+
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
@@ -63,12 +63,12 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
           ),
-          // Barra de pesquisa
+
           CustomSearchBar(
             controller: _searchController,
             onSearch: _onSearch,
           ),
-          // Seção de consulta
+
           ConsultationSection(),
           Expanded(
             child: Container(),
