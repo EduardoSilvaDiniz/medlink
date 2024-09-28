@@ -8,8 +8,12 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: const Align(
         alignment: Alignment.centerRight,
-        child: Text("medlink"),
+        child: Text(
+          "medlink",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
+      iconTheme: const IconThemeData(color: Colors.white),
       backgroundColor: Colors.blueAccent,
     );
   }

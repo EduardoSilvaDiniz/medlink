@@ -8,7 +8,7 @@ class SearchBarCustom extends StatelessWidget{
     return SearchAnchor(
         builder: (BuildContext context, SearchController controller) {
       return SearchBar(
-        controller: controller,
+       controller: controller,
         padding: const WidgetStatePropertyAll<EdgeInsets>(
             EdgeInsets.symmetric(horizontal: 16.0)),
         onTap: () {

@@ -11,8 +11,9 @@ class Factory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Column(
-        children: _construcaoDoFilhoColumn(),
+      Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: _construcaoDoFilhoColumn(),
       ),
       const Spacer(),
       GridView.count(
@@ -23,17 +24,18 @@ class Factory extends StatelessWidget {
     ]);
   }
 
-  List<Widget> _construcaoDoFilhoColumn() {
-    return <Widget>[
-      const Align(
+  Widget _construcaoDoFilhoColumn() {
+    return const Column(children: [
+      Align(
         alignment: Alignment.centerLeft,
         child: Text(
           "Olá, (Usuario).",
           style: TextStyle(fontSize: 24, color: Colors.blue),
         ),
       ),
-      const SearchBarCustom(),
-    ];
+      SizedBox(height: 10),
+      SearchBarCustom(),
+    ]);
   }
 
   List<Widget> _construcaoDoFilhoGridView() {
