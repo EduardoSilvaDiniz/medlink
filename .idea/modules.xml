@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/medlink.iml" filepath="$PROJECT_DIR$/medlink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/local_medlink.iml" filepath="$PROJECT_DIR$/local_medlink.iml" />
       <module fileurl="file://$PROJECT_DIR$/android/medlink_android.iml" filepath="$PROJECT_DIR$/android/medlink_android.iml" />
     </modules>
   </component>
