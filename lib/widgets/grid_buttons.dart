@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/screens/page_fake.dart';
+import 'package:medlink/screens/scheduling.dart';
 
 class GridButtons extends StatelessWidget {
   GridButtons({super.key});
@@ -39,7 +39,7 @@ class GridButtons extends StatelessWidget {
   static void _actionOnTap(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const PageFake()),
+      MaterialPageRoute(builder: (context) => const Scheduling()),
     );
   }
 

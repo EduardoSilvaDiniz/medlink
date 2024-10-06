@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/factorys/factory_body.dart';
-import 'package:medlink/widgets/app_bar_custom.dart';
+import 'package:medlink/widgets/app_bar_manpage.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 
 class ManPage extends StatefulWidget {
