@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SearchBarCustom extends StatelessWidget{
-  const SearchBarCustom({super.key});
+class SearchBarForManPage extends StatelessWidget {
+  const SearchBarForManPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SearchAnchor(
         builder: (BuildContext context, SearchController controller) {
       return SearchBar(
-       controller: controller,
+        controller: controller,
         padding: const WidgetStatePropertyAll<EdgeInsets>(
             EdgeInsets.symmetric(horizontal: 16.0)),
         onTap: () {

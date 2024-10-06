@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
+class PageFake extends StatelessWidget {
+  const PageFake({super.key});
 
   @override
   Widget build(BuildContext context) {

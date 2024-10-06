@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/factory.dart';
+import 'package:medlink/factorys/factory_body.dart';
 import 'package:medlink/widgets/app_bar_custom.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 
@@ -13,9 +13,9 @@ class _ManPageState extends State<ManPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: AppBarCustom(),
+      appBar: AppBarManPage(),
       drawer: HamburgerButton(),
-      body: Factory(),
+      body: FactoryBodyManPage(),
     );
   }
 }
