@@ -23,12 +23,9 @@ class FactoryBodyManPage extends StatelessWidget {
   Widget _createTituleAndSearchbar() {
     return Column(children: [
       Align(
-        alignment: Alignment.centerLeft,
-        child: Text(
-          "Olá, (${GetDataUser.getUserName()}).",
-          style: const TextStyle(fontSize: 24, color: Colors.blue),
-        ),
-      ),
+          alignment: Alignment.centerLeft,
+          child: Text("Olá, (${GetDataUser.getUserName()}).",
+              style: const TextStyle(fontSize: 24, color: Colors.blue))),
       const SizedBox(height: 10),
       const SearchBarForManPage(),
     ]);

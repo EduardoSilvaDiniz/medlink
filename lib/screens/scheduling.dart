@@ -1,110 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/widgets/app_bar_manpage.dart';
+import 'package:medlink/widgets/button.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 import 'package:medlink/widgets/searchbar_manpage.dart';
 
 class Scheduling extends StatelessWidget {
-  const Scheduling({super.key});
+  Scheduling({super.key});
+
+  final List<String> _items = [
+    "Alergista e Imunologista",
+    "Anestesista",
+    "Angiologista e Cirurgião Vascular",
+    "Cardiologista",
+    "Cirurgião Cardiovascular",
+    "Cirurgião Geral",
+    "Cirurgião Pediátrico",
+    "Clínico Geral",
+    "Dermatologista",
+    "Endocrinologista",
+    "Gastroenterologista",
+    "Ginecologista e Obstetra",
+    "Neurologista",
+    "Oftalmologista",
+    "Ortopedista",
+    "Otorrinolaringologista",
+    "Pediatra",
+    "Pneumologista",
+    "Psiquiatra",
+    "Reumatologista",
+    "Urologista"
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarManPage(),
-      drawer: const HamburgerButton(),
-      body: Column(
-        children: [
-          const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Center(
-                child: Text(
-                  "AGENDAMENTO",
-                  style: TextStyle(fontSize: 24, color: Colors.blue),
-                ),
-              )),
-          _iconWithTitle(Icons.emergency, "Selecione uma especialidade"),
-          const SafeArea(child: SearchBarForManPage()),
-          Expanded(
-            child: _createListMed(context),
-          )
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
+        appBar: const AppBarManPage(),
+        drawer: const HamburgerButton(),
+        body: _bobyScheduling(context),
+        floatingActionButton: _createFloatingButton(context));
+  }
+
+  Widget _createFloatingButton(BuildContext context) {
+    return FloatingActionButton(
         onPressed: () {
           Navigator.pop(context);
         },
-        child: const Icon(Icons.exit_to_app),
-      ),
-    );
+        child: const Icon(Icons.exit_to_app));
+  }
+
+  Widget _bobyScheduling(BuildContext context) {
+    return Column(children: [
+      Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: _titleCenter("AGENDAMENTO")),
+      Button.buttonTitle("Selecione uma especialidade", Icons.emergency),
+      const Padding(
+          padding: EdgeInsets.all(30.0), child: SearchBarForManPage()),
+      Expanded(
+          child: DecoratedBox(
+              decoration: const BoxDecoration(color: Colors.blue),
+              child: _createListMed(context)))
+    ]);
+  }
+
+  Widget _titleCenter(String title) {
+    return Center(
+        child: Text(title,
+            style: const TextStyle(fontSize: 24, color: Colors.blue)));
   }
 
   Widget _createListMed(BuildContext context) {
-    final List<String> items = [
-      "Alergista e Imunologista",
-      "Anestesista",
-      "Angiologista e Cirurgião Vascular",
-      "Cardiologista",
-      "Cirurgião Cardiovascular",
-      "Cirurgião Geral",
-      "Cirurgião Pediátrico",
-      "Clínico Geral",
-      "Dermatologista",
-      "Endocrinologista",
-      "Gastroenterologista",
-      "Ginecologista e Obstetra",
-      "Neurologista",
-      "Oftalmologista",
-      "Ortopedista",
-      "Otorrinolaringologista",
-      "Pediatra",
-      "Pneumologista",
-      "Psiquiatra",
-      "Reumatologista",
-      "Urologista"
-    ];
-
     return ListView.builder(
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return InkWell(
-          onTap: () {},
-          child: Row(
-            children: [
-              const Icon(Icons.add),
-              Text(items[index]),
-            ],
-          ),
-        );
-      },
-    );
+        itemCount: _items.length,
+        itemBuilder: (context, index) {
+          return _addtolistmed(_items[index]);
+        });
   }
 
-  //TODO este metodo é igual ao buildButton da classe gridButtons, crie uma classe para suprir ambos
-  Widget _iconWithTitle(IconData icon, String text) {
-    return Column(
-      children: [
-        ClipRRect(
-            borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(50), bottomLeft: Radius.circular(50)),
-            child: Flexible(
-              child: Container(
-                height: 150,
-                width: 150,
-                color: Colors.blue,
-                child: Icon(
-                  icon,
-                  color: Colors.white,
-                  size: 85,
-                ),
-              ),
-            )),
-        Text(
-          text,
-          style: const TextStyle(
-              fontSize: 20,
-              color: Colors.blueGrey,
-              fontWeight: FontWeight.bold),
-        ),
-      ],
-    );
+  Widget _addtolistmed(String text) {
+    return Padding(
+        padding: const EdgeInsets.all(10),
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(20),
+                backgroundColor: const Color.fromARGB(38, 38, 38, 1)),
+            onPressed: () {},
+            child: Row(children: [
+              const Icon(Icons.add, color: Colors.blue, size: 35),
+              Text(text,
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold))
+            ])));
   }
 }

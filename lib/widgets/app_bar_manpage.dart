@@ -6,16 +6,11 @@ class AppBarManPage extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Align(
-        alignment: Alignment.centerRight,
-        child: Text(
-          "medlink",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-      iconTheme: const IconThemeData(color: Colors.white),
-      backgroundColor: Colors.blueAccent,
-    );
+        title: const Align(
+            alignment: Alignment.centerRight,
+            child: Text("medlink", style: TextStyle(color: Colors.white))),
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.blueAccent);
   }
 
   @override

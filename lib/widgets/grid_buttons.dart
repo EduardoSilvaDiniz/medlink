@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/screens/scheduling.dart';
+import 'package:medlink/widgets/button.dart';
 
 class GridButtons extends StatelessWidget {
   GridButtons({super.key});
@@ -25,56 +25,13 @@ class GridButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 1.1,
-      ),
-      itemCount: _icons.length,
-      itemBuilder: (context, index) {
-        return _buildButton(_icons[index], _texts[index], context);
-      },
-    );
-  }
-
-  static void _actionOnTap(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Scheduling()),
-    );
-  }
-
-  static Widget _buildButton(IconData icon, String text, BuildContext context) {
-    return Column(
-      children: [
-        InkWell(
-          onTap: () {
-            _actionOnTap(context);
-          },
-          child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(50),
-                  bottomLeft: Radius.circular(50)),
-              child: Flexible(
-                child: Container(
-                  height: 150,
-                  width: 150,
-                  color: Colors.blue,
-                  child: Icon(
-                    icon,
-                    color: Colors.white,
-                    size: 85,
-                  ),
-                ),
-              )),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 1.1,
         ),
-        Text(
-          text,
-          style: const TextStyle(
-              fontSize: 20,
-              color: Colors.blueGrey,
-              fontWeight: FontWeight.bold),
-        ),
-      ],
-    );
+        itemCount: _icons.length,
+        itemBuilder: (context, index) {
+          return Button.buttonClick(_texts[index], _icons[index], 1, context);
+        });
   }
 }
