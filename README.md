@@ -1,17 +1,17 @@
-<h1 align="center">
+<h1>
 Menu Principal
-</h4>
-  
+</h1>
+
 ![menu principal](imagens/man-page.png)
 
-<h1 align="center">
+<h1>
 Menu Hamburger
-</h4>
+</h1>
 
 ![menu hamburger](imagens/menu-Hamburger.png)
 
-<h1 align="center">
-Tela de Agendamento (em desenvolvimento)
-</h4>
+<h1>
+Tela de Agendamento
+</h1>
 
 ![Tela de Agendamento](imagens/agendamento.png)
