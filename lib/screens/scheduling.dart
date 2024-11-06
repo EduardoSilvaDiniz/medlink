@@ -8,6 +8,7 @@ class Scheduling extends StatelessWidget {
   Scheduling({super.key});
 
   final List<String> _items = [
+    "Todas",
     "Alergista e Imunologista",
     "Anestesista",
     "Angiologista e Cirurgião Vascular",
@@ -56,10 +57,7 @@ class Scheduling extends StatelessWidget {
       Button.buttonTitle("Selecione uma especialidade", Icons.emergency),
       const Padding(
           padding: EdgeInsets.all(30.0), child: SearchBarForManPage()),
-      Expanded(
-          child: DecoratedBox(
-              decoration: const BoxDecoration(color: Colors.blue),
-              child: _createListMed(context)))
+      Expanded(child: _createListMeds(context))
     ]);
   }
 
@@ -69,27 +67,27 @@ class Scheduling extends StatelessWidget {
             style: const TextStyle(fontSize: 24, color: Colors.blue)));
   }
 
-  Widget _createListMed(BuildContext context) {
+  Widget _createListMeds(BuildContext context) {
     return ListView.builder(
         itemCount: _items.length,
         itemBuilder: (context, index) {
-          return _addtolistmed(_items[index]);
+          return _addListMeds(_items[index]);
         });
   }
 
-  Widget _addtolistmed(String text) {
+  Widget _addListMeds(String text) {
     return Padding(
         padding: const EdgeInsets.all(10),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(20),
-                backgroundColor: const Color.fromARGB(38, 38, 38, 1)),
+                backgroundColor: const Color.fromRGBO(206,206,206,1)),
             onPressed: () {},
             child: Row(children: [
-              const Icon(Icons.add, color: Colors.blue, size: 35),
+              const Icon(Icons.add, color: Color.fromRGBO(11, 88, 216, 1), size: 35),
               Text(text,
                   style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold))
+                      fontSize: 16, fontWeight: FontWeight.bold, color: Color.fromRGBO(38, 38, 38, 1)))
             ])));
   }
 }

@@ -13,9 +13,8 @@ class FactoryBodyManPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: _createTituleAndSearchbar(),
-      ),
+          padding: const EdgeInsets.all(20.0),
+          child: _createTituleAndSearchbar()),
       Expanded(child: GridButtons().build(context)),
     ]);
   }
@@ -27,7 +26,7 @@ class FactoryBodyManPage extends StatelessWidget {
           child: Text("Olá, (${GetDataUser.getUserName()}).",
               style: const TextStyle(fontSize: 24, color: Colors.blue))),
       const SizedBox(height: 10),
-      const SearchBarForManPage(),
+      const SearchBarForManPage()
     ]);
   }
 }

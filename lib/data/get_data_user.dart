@@ -1,10 +1,12 @@
-class GetDataUser {
-  //TODO Adicionar conexão com banco de dados para coletar informacoes reais
+interface class GetDataUser {
+  static String _name = "USUÁRIO";
+  static String _cpf = "000.000.000-00";
+
   static String getUserName() {
-    return "USUARIO";
+    return _name;
   }
 
   static String getUserCpf() {
-    return "000.000.000-00";
+    return _cpf;
   }
 }

@@ -3,6 +3,7 @@ import 'package:medlink/data/get_data_user.dart';
 
 class HamburgerButton extends StatelessWidget {
   const HamburgerButton({super.key});
+
   final int _notifications = 0;
 
   @override
@@ -31,7 +32,7 @@ class HamburgerButton extends StatelessWidget {
         Text(GetDataUser.getUserName(),
             style: const TextStyle(fontSize: 24, color: Colors.white)),
         Text(GetDataUser.getUserCpf(),
-            style: const TextStyle(fontSize: 14, color: Colors.white)),
+            style: const TextStyle(fontSize: 14, color: Colors.white))
       ])
     ]);
   }
@@ -59,13 +60,13 @@ class HamburgerButton extends StatelessWidget {
       return <Widget>[
         const ListTile(
             title: Text('não há notificações',
-                style: TextStyle(color: Colors.white))),
+                style: TextStyle(color: Colors.white)))
       ];
     } else {
       return <Widget>[
         const ListTile(
             title:
-                Text('há notificações', style: TextStyle(color: Colors.white))),
+                Text('há notificações', style: TextStyle(color: Colors.white)))
       ];
     }
   }
