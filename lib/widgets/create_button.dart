@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/screens/man_page.dart';
-import 'package:medlink/screens/scheduling.dart';
 
-class Button {
-  static final List<Widget> _screens = [const ManPage(), Scheduling()];
+class CreateButton extends StatelessWidget {
+  const CreateButton(
+      {super.key,
+      required this.route,
+      required this.icon,
+      required this.title});
 
-  static Widget buttonClick(
-      String title, IconData icon, int screen, BuildContext context) {
+  final String route;
+  final IconData icon;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(children: [
       InkWell(
           onTap: () {
-            _actionOnTap(context, screen);
+            Navigator.pushNamed(context, route);
           },
           child: ClipRRect(
               borderRadius: const BorderRadius.only(
@@ -47,10 +53,5 @@ class Button {
               color: Colors.blueGrey,
               fontWeight: FontWeight.bold))
     ]);
-  }
-
-  static void _actionOnTap(BuildContext context, int index) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => _screens[index]));
   }
 }

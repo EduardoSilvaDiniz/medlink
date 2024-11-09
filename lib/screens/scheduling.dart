@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/widgets/app_bar_manpage.dart';
-import 'package:medlink/widgets/button.dart';
+import 'package:medlink/widgets/create_button.dart';
+import 'package:medlink/widgets/floating_button_exit.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 import 'package:medlink/widgets/searchbar_manpage.dart';
+import 'package:medlink/widgets/buttons_navegation.dart';
 
 class Scheduling extends StatelessWidget {
   Scheduling({super.key});
@@ -38,23 +40,17 @@ class Scheduling extends StatelessWidget {
         appBar: const AppBarManPage(),
         drawer: const HamburgerButton(),
         body: _bobyScheduling(context),
-        floatingActionButton: _createFloatingButton(context));
+        floatingActionButton: const FloatingButtonExit(),
+        bottomNavigationBar: const BottomNavigationBarExample());
   }
 
-  Widget _createFloatingButton(BuildContext context) {
-    return FloatingActionButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: const Icon(Icons.exit_to_app));
-  }
 
   Widget _bobyScheduling(BuildContext context) {
     return Column(children: [
       Padding(
           padding: const EdgeInsets.all(10.0),
           child: _titleCenter("AGENDAMENTO")),
-      Button.buttonTitle("Selecione uma especialidade", Icons.emergency),
+      CreateButton.buttonTitle("Selecione uma especialidade", Icons.emergency),
       const Padding(
           padding: EdgeInsets.all(30.0), child: SearchBarForManPage()),
       Expanded(child: _createListMeds(context))
