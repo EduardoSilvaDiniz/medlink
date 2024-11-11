@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/data/get_data_user.dart';
 import 'package:medlink/widgets/grid_buttons.dart';
-import 'package:medlink/widgets/searchbar_manpage.dart';
+import 'package:medlink/widgets/searchbar_build.dart';
 
 class FactoryBodyManPage extends StatelessWidget {
   const FactoryBodyManPage({super.key});
@@ -26,7 +26,7 @@ class FactoryBodyManPage extends StatelessWidget {
           child: Text("Olá, (${GetDataUser.getUserName()}).",
               style: const TextStyle(fontSize: 24, color: Colors.blue))),
       const SizedBox(height: 10),
-      const SearchBarForManPage()
+      const SearchBarBuild()
     ]);
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:medlink/factorys/factory_body.dart';
-import 'package:medlink/widgets/app_bar_manpage.dart';
+import 'package:medlink/widgets/app_bar_build.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 
 class ManPage extends StatefulWidget {
@@ -16,12 +17,12 @@ class _ManPageState extends State<ManPage> {
   List<Widget> listBody = const [
     FactoryBodyManPage(),
     FactoryBodyManPage(),
-    FactoryBodyManPage(),
+    FactoryBodyManPage()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const AppBarManPage(),
+        appBar: const AppBarBuild(),
         drawer: const HamburgerButton(),
         body: listBody[index],
         bottomNavigationBar: BottomNavigationBar(

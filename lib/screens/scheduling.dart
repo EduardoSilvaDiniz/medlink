@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/widgets/create_button.dart';
-import 'package:medlink/widgets/searchbar_manpage.dart';
+import 'package:medlink/widgets/searchbar_build.dart';
 
 class Scheduling extends StatelessWidget {
   Scheduling({super.key});
@@ -42,7 +42,7 @@ class Scheduling extends StatelessWidget {
           child: _titleCenter("AGENDAMENTO")),
       CreateButton.buttonTitle("Selecione uma especialidade", Icons.emergency),
       const Padding(
-          padding: EdgeInsets.all(30.0), child: SearchBarForManPage()),
+          padding: EdgeInsets.all(30.0), child: SearchBarBuild()),
       Expanded(child: _createListMeds(context))
     ]);
   }
