@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/factorys/factory_body.dart';
+import 'package:medlink/screens/payment_screen.dart';
 import 'package:medlink/widgets/app_bar_manpage.dart';
-import 'package:medlink/widgets/buttons_navegation.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 
 class ManPage extends StatefulWidget {
@@ -12,12 +12,30 @@ class ManPage extends StatefulWidget {
 }
 
 class _ManPageState extends State<ManPage> {
+  int index = 0;
+
+  List<Widget> listBody = const [
+    FactoryBodyManPage(),
+    PaymentScreen(),
+    FactoryBodyManPage(),
+  ];
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        appBar: AppBarManPage(),
-        drawer: HamburgerButton(),
-        body: FactoryBodyManPage(),
-        bottomNavigationBar: BottomNavigationBarExample());
+    return Scaffold(
+        appBar: const AppBarManPage(),
+        drawer: const HamburgerButton(),
+        body: listBody[index],
+        bottomNavigationBar: BottomNavigationBar(
+            currentIndex: index,
+            onTap: (int index) {
+              setState(() {
+                this.index = index;
+              });
+            },
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
+              BottomNavigationBarItem(icon: Icon(Icons.settings), label: '')
+            ]));
   }
 }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/widgets/buttons_navegation.dart';
-import 'package:medlink/widgets/floating_button_exit.dart';
 
 class PaymentScreen extends StatelessWidget {
   const PaymentScreen({super.key});
@@ -8,41 +6,34 @@ class PaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.blue,
-            leading: const Icon(Icons.menu, color: Colors.white),
-            title: const Text('MEDLINK',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.white))),
-        body: const Padding(
-            padding: EdgeInsets.all(16.0),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Center(
-                  child: Text('Informe os dados para pagamento:',
-                      style: TextStyle(fontSize: 20, color: Colors.blue))),
-              SizedBox(height: 20),
-              PaymentCard(
-                  icon: Icons.credit_card,
-                  title: 'Cartão de crédito',
-                  child: CardDetailsForm()),
-              PaymentCard(
-                  icon: Icons.pix, title: 'Pix', child: PixDetailsForm()),
-              PaymentCard(
-                  icon: Icons.receipt, title: 'Boleto', child: PixDetailsForm())
-            ])),
-        floatingActionButton: const FloatingButtonExit(),
-        bottomNavigationBar: const BottomNavigationBarExample());
+      appBar: AppBar(),
+      body: const Padding(
+          padding: EdgeInsets.all(16.0),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Center(
+                child: Text('Informe os dados para pagamento:',
+                    style: TextStyle(fontSize: 20, color: Colors.blue))),
+            SizedBox(height: 20),
+            _PaymentCard(
+                icon: Icons.credit_card,
+                title: 'Cartão de crédito',
+                child: _CardDetailsForm()),
+            _PaymentCard(
+                icon: Icons.pix, title: 'Pix', child: _PixDetailsForm()),
+            _PaymentCard(
+                icon: Icons.receipt, title: 'Boleto', child: _PixDetailsForm())
+          ])),
+    );
   }
 }
 
-class PaymentCard extends StatelessWidget {
+class _PaymentCard extends StatelessWidget {
   final IconData icon;
   final String title;
   final Widget? child;
 
-  const PaymentCard(
-      {super.key, required this.icon, required this.title, this.child});
+  const _PaymentCard({required this.icon, required this.title, this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +46,8 @@ class PaymentCard extends StatelessWidget {
   }
 }
 
-class CardDetailsForm extends StatelessWidget {
-  const CardDetailsForm({super.key});
+class _CardDetailsForm extends StatelessWidget {
+  const _CardDetailsForm();
 
   @override
   Widget build(BuildContext context) {
@@ -102,8 +93,8 @@ class CardDetailsForm extends StatelessWidget {
   }
 }
 
-class PixDetailsForm extends StatelessWidget {
-  const PixDetailsForm({super.key});
+class _PixDetailsForm extends StatelessWidget {
+  const _PixDetailsForm();
 
   @override
   Widget build(BuildContext context) {

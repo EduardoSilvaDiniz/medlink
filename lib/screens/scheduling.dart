@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/widgets/app_bar_manpage.dart';
 import 'package:medlink/widgets/create_button.dart';
-import 'package:medlink/widgets/floating_button_exit.dart';
-import 'package:medlink/widgets/hamburger_button.dart';
 import 'package:medlink/widgets/searchbar_manpage.dart';
-import 'package:medlink/widgets/buttons_navegation.dart';
 
 class Scheduling extends StatelessWidget {
   Scheduling({super.key});
@@ -36,14 +32,8 @@ class Scheduling extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const AppBarManPage(),
-        drawer: const HamburgerButton(),
-        body: _bobyScheduling(context),
-        floatingActionButton: const FloatingButtonExit(),
-        bottomNavigationBar: const BottomNavigationBarExample());
+    return Scaffold(appBar: AppBar(), body: _bobyScheduling(context));
   }
-
 
   Widget _bobyScheduling(BuildContext context) {
     return Column(children: [
@@ -77,13 +67,16 @@ class Scheduling extends StatelessWidget {
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(20),
-                backgroundColor: const Color.fromRGBO(206,206,206,1)),
+                backgroundColor: const Color.fromRGBO(206, 206, 206, 1)),
             onPressed: () {},
             child: Row(children: [
-              const Icon(Icons.add, color: Color.fromRGBO(11, 88, 216, 1), size: 35),
+              const Icon(Icons.add,
+                  color: Color.fromRGBO(11, 88, 216, 1), size: 35),
               Text(text,
                   style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold, color: Color.fromRGBO(38, 38, 38, 1)))
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(38, 38, 38, 1)))
             ])));
   }
 }
