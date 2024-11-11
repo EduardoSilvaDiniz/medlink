@@ -4,7 +4,7 @@ class CustomBottomNavBar extends StatelessWidget {
   final int selectedIndex;
   final ValueChanged<int> onItemTapped;
 
-  CustomBottomNavBar({
+  const CustomBottomNavBar({super.key, 
     required this.selectedIndex,
     required this.onItemTapped,
   });
@@ -12,7 +12,7 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
         boxShadow: [

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/factorys/factory_body.dart';
-import 'package:medlink/screens/payment_screen.dart';
 import 'package:medlink/widgets/app_bar_manpage.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 
@@ -16,7 +15,7 @@ class _ManPageState extends State<ManPage> {
 
   List<Widget> listBody = const [
     FactoryBodyManPage(),
-    PaymentScreen(),
+    FactoryBodyManPage(),
     FactoryBodyManPage(),
   ];
   @override

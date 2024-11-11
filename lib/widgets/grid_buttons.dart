@@ -15,7 +15,7 @@ class GridButtons extends StatelessWidget {
       'icon': Icons.phone_callback_outlined,
       'route': '/'
     },
-    {'title': 'MINHAS CONSULTAS', 'icon': Icons.medical_services, 'route': '/'},
+    {'title': 'MINHAS CONSULTAS', 'icon': Icons.medical_services, 'route': '/consult'},
     {'title': 'CHAT', 'icon': Icons.chat, 'route': '/'},
     {'title': 'PAGAMENTOS', 'icon': Icons.payments, 'route': '/pay'},
     {'title': 'AJUDA', 'icon': Icons.help, 'route': '/'}

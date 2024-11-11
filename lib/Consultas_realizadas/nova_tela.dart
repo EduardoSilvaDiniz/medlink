@@ -4,18 +4,20 @@ import '../Pagina_inicial/BarraInferiorDeNavegacao.dart';
 import 'ListaConsultas.dart';
 
 class NovaTela extends StatelessWidget {
+  const NovaTela({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nova Tela'),
+        title: const Text('Nova Tela'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Título "Relatórios de Consultas Anteriores"
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
             child: Text(
               'Relatórios de Consultas Anteriores:',
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
@@ -34,7 +36,7 @@ class NovaTela extends StatelessWidget {
             height: 8,
           ),
 
-          NovaConsultationSection(),
+          const NovaConsultationSection(),
 
           Container(
             color: Colors.grey[300],

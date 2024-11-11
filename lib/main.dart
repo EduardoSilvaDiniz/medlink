@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/screens/man_page.dart';
+import 'package:medlink/screens/my_consult.dart';
 import 'package:medlink/screens/payment_screen.dart';
 import 'package:medlink/screens/scheduling.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => const ManPage(),
           '/pay': (context) => const PaymentScreen(),
           '/scheduling': (context) => Scheduling(),
+          '/consult': (context) => const MyConsult(),
         });
   }
 }

@@ -4,7 +4,7 @@ class CustomSearchBar extends StatelessWidget {
   final TextEditingController controller;
   final VoidCallback onSearch;
 
-  CustomSearchBar({
+  const CustomSearchBar({super.key, 
     required this.controller,
     required this.onSearch,
   });
@@ -17,9 +17,9 @@ class CustomSearchBar extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           hintText: 'Pesquisar...',
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           suffixIcon: IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: onSearch,
           ),
         ),

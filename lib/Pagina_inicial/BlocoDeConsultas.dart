@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ConsultationSection extends StatefulWidget {
+  const ConsultationSection({super.key});
+
   @override
   _ConsultationSectionState createState() => _ConsultationSectionState();
 }
@@ -29,12 +31,12 @@ class _ConsultationSectionState extends State<ConsultationSection> {
 
   Widget _buildConsultationTile(String specialty, String doctor, String date, bool isExpanded, ValueChanged<bool> onExpand) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 16.0),
+      margin: const EdgeInsets.symmetric(vertical: 16.0),
       decoration: BoxDecoration(
         color: Colors.blue[900],
         borderRadius: BorderRadius.circular(20.0),
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
           Row(
@@ -42,16 +44,16 @@ class _ConsultationSectionState extends State<ConsultationSection> {
             children: [
               Text(
                 specialty,
-                style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
+                style: const TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
               Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.add, color: Colors.white),
+                    icon: const Icon(Icons.add, color: Colors.white),
                     onPressed: () => onExpand(true),
                   ),
                   IconButton(
-                    icon: Icon(Icons.remove, color: Colors.white),
+                    icon: const Icon(Icons.remove, color: Colors.white),
                     onPressed: () => onExpand(false),
                   ),
                 ],
@@ -66,15 +68,15 @@ class _ConsultationSectionState extends State<ConsultationSection> {
 
   Widget _buildExpandedInfo(String doctor, String date) {
     return Container(
-      margin: EdgeInsets.only(top: 16.0),
-      padding: EdgeInsets.all(16.0),
+      margin: const EdgeInsets.only(top: 16.0),
+      padding: const EdgeInsets.all(16.0),
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(doctor, style: TextStyle(color: Colors.black, fontSize: 18.0)),
-          Text('Data: $date', style: TextStyle(color: Colors.black)),
-          SizedBox(height: 16.0),
+          Text(doctor, style: const TextStyle(color: Colors.black, fontSize: 18.0)),
+          Text('Data: $date', style: const TextStyle(color: Colors.black)),
+          const SizedBox(height: 16.0),
           Align(
             alignment: Alignment.centerRight,
             child: ElevatedButton(
@@ -82,10 +84,10 @@ class _ConsultationSectionState extends State<ConsultationSection> {
                 print('Entrando na consulta...');
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                 backgroundColor: Colors.green,
               ),
-              child: Text('Entrar'),
+              child: const Text('Entrar'),
             ),
           ),
         ],

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../Consultas_realizadas/nova_tela.dart';
 
 class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -11,7 +13,10 @@ class MyDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              child: Text(
+              decoration: BoxDecoration(
+                color: Colors.blue[800],
+              ),
+              child: const Text(
                 'Medlink',
                 style: TextStyle(
                   color: Colors.white,
@@ -19,45 +24,42 @@ class MyDrawer extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              decoration: BoxDecoration(
-                color: Colors.blue[800],
-              ),
             ),
             ListTile(
-              leading: Icon(Icons.home, color: Colors.white),
-              title: Text('Início', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.home, color: Colors.white),
+              title: const Text('Início', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.person, color: Colors.white),
-              title: Text('Perfil', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.person, color: Colors.white),
+              title: const Text('Perfil', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings, color: Colors.white),
-              title: Text('Configurações', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.settings, color: Colors.white),
+              title: const Text('Configurações', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
-            Divider(color: Colors.white),
+            const Divider(color: Colors.white),
             ListTile(
-              leading: Icon(Icons.new_releases, color: Colors.white),
-              title: Text('Nova Tela', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.new_releases, color: Colors.white),
+              title: const Text('Nova Tela', style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NovaTela()),
+                  MaterialPageRoute(builder: (context) => const NovaTela()),
                 );
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout, color: Colors.white),
-              title: Text('Sair', style: TextStyle(color: Colors.white)),
+              leading: const Icon(Icons.logout, color: Colors.white),
+              title: const Text('Sair', style: TextStyle(color: Colors.white)),
               onTap: () {
 
                 Navigator.pop(context);

@@ -2,6 +2,8 @@
   import '../Pagina_inicial/BarraDeBusca.dart';
 
   abstract class BaseScreen extends StatefulWidget {
+  const BaseScreen({super.key});
+
     @override
     _BaseScreenState createState() => _BaseScreenState();
   }
@@ -32,9 +34,9 @@
               controller: searchController,
               onSearch: onSearch,
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: const Text(
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
                 'Consultas Agendadas:',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),

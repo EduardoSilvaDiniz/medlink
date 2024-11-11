@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Function? onMenuPressed;
 
-  MyAppBar({this.onMenuPressed});
+  const MyAppBar({super.key, this.onMenuPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Builder(
         builder: (BuildContext context) {
           return IconButton(
-            icon: Icon(Icons.menu, color: Colors.white),
+            icon: const Icon(Icons.menu, color: Colors.white),
             onPressed: () {
               if (onMenuPressed != null) {
                 onMenuPressed!();
@@ -24,7 +24,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           );
         },
       ),
-      title: Row(
+      title: const Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Text(
@@ -37,5 +37,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(60);
+  Size get preferredSize => const Size.fromHeight(60);
 }

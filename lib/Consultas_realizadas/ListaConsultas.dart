@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NovaConsultationSection extends StatefulWidget {
+  const NovaConsultationSection({super.key});
+
   @override
   _NovaConsultationSectionState createState() => _NovaConsultationSectionState();
 }
@@ -29,12 +31,12 @@ class _NovaConsultationSectionState extends State<NovaConsultationSection> {
 
   Widget _buildConsultationTile(String specialty, String doctor, String dateTime, bool isExpanded, ValueChanged<bool> onExpand, Color color) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 16.0),
+      margin: const EdgeInsets.symmetric(vertical: 16.0),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(20.0),
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
           Row(
@@ -42,16 +44,16 @@ class _NovaConsultationSectionState extends State<NovaConsultationSection> {
             children: [
               Text(
                 specialty,
-                style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.bold),
+                style: const TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
               Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.add, color: Colors.black),
+                    icon: const Icon(Icons.add, color: Colors.black),
                     onPressed: () => onExpand(true),
                   ),
                   IconButton(
-                    icon: Icon(Icons.remove, color: Colors.black),
+                    icon: const Icon(Icons.remove, color: Colors.black),
                     onPressed: () => onExpand(false),
                   ),
                 ],
@@ -66,15 +68,15 @@ class _NovaConsultationSectionState extends State<NovaConsultationSection> {
 
   Widget _buildExpandedInfo(String doctor, String dateTime) {
     return Container(
-      margin: EdgeInsets.only(top: 16.0),
-      padding: EdgeInsets.all(16.0),
+      margin: const EdgeInsets.only(top: 16.0),
+      padding: const EdgeInsets.all(16.0),
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(doctor, style: TextStyle(color: Colors.black, fontSize: 18.0)),
-          Text('Data: $dateTime', style: TextStyle(color: Colors.black)),
-          SizedBox(height: 16.0),
+          Text(doctor, style: const TextStyle(color: Colors.black, fontSize: 18.0)),
+          Text('Data: $dateTime', style: const TextStyle(color: Colors.black)),
+          const SizedBox(height: 16.0),
           Align(
             alignment: Alignment.centerRight,
             child: ElevatedButton.icon(
@@ -82,11 +84,11 @@ class _NovaConsultationSectionState extends State<NovaConsultationSection> {
                 print('Gerando relatório...');
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                 backgroundColor: Colors.grey,
               ),
-              icon: Icon(Icons.insert_drive_file, color: Colors.black),
-              label: Text('Relatório', style: TextStyle(color: Colors.black)),
+              icon: const Icon(Icons.insert_drive_file, color: Colors.black),
+              label: const Text('Relatório', style: TextStyle(color: Colors.black)),
             ),
           ),
         ],
