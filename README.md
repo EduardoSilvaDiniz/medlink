@@ -1,6 +1,6 @@
 # Projeto da Faculdade
 
-- **Disciplina**: Desenvolvimento Mobile
+- **Disciplina**: Programação mobile
 - **Professor**: Marnes Cassule
 - **Semestre**: 4º Semestre
 - **Projeto**: Medlink
