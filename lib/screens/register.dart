@@ -10,15 +10,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: CadastroPage1());
+        debugShowCheckedModeBanner: false, home: Register());
   }
 }
 
-class CadastroPage1 extends StatelessWidget {
-  const CadastroPage1({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+        backgroundColor: Colors.blue,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15));
     return Scaffold(
         body: Container(
             width: double.infinity,
@@ -100,13 +104,10 @@ class CadastroPage1 extends StatelessWidget {
                                     const BorderSide(color: Colors.blue)))),
                     const SizedBox(height: 60),
                     ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 100, vertical: 15)),
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/continued-register");
+                        },
+                        style: style,
                         child: const Text("Continuar",
                             style: TextStyle(color: Colors.white)))
                   ])),

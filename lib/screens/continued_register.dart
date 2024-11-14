@@ -1,21 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: CadastroPage1());
-  }
-}
-
-class CadastroPage1 extends StatelessWidget {
-  const CadastroPage1({super.key});
+class ContinuedRegister extends StatelessWidget {
+  const ContinuedRegister({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +31,7 @@ class CadastroPage1 extends StatelessWidget {
                   child: Column(children: [
                     TextField(
                         decoration: InputDecoration(
-                            hintText: "Nome",
+                            hintText: "CPF",
                             filled: true,
                             fillColor: Colors.white.withOpacity(0.8),
                             enabledBorder: OutlineInputBorder(
@@ -59,7 +45,7 @@ class CadastroPage1 extends StatelessWidget {
                     const SizedBox(height: 20),
                     TextField(
                         decoration: InputDecoration(
-                            hintText: "E-mail",
+                            hintText: "Data de nascimento",
                             filled: true,
                             fillColor: Colors.white.withOpacity(0.8),
                             enabledBorder: OutlineInputBorder(
@@ -73,7 +59,7 @@ class CadastroPage1 extends StatelessWidget {
                     const SizedBox(height: 20),
                     TextField(
                         decoration: InputDecoration(
-                            hintText: "Senha",
+                            hintText: "Celular",
                             filled: true,
                             fillColor: Colors.white.withOpacity(0.8),
                             enabledBorder: OutlineInputBorder(
@@ -87,7 +73,7 @@ class CadastroPage1 extends StatelessWidget {
                     const SizedBox(height: 20),
                     TextField(
                         decoration: InputDecoration(
-                            hintText: "Confirme sua senha",
+                            hintText: "Gênero",
                             filled: true,
                             fillColor: Colors.white.withOpacity(0.8),
                             enabledBorder: OutlineInputBorder(
@@ -100,14 +86,16 @@ class CadastroPage1 extends StatelessWidget {
                                     const BorderSide(color: Colors.blue)))),
                     const SizedBox(height: 60),
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/login");
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30)),
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 100, vertical: 15)),
-                        child: const Text("Continuar",
+                        child: const Text("Cadastrar",
                             style: TextStyle(color: Colors.white)))
                   ])),
               const Spacer(),

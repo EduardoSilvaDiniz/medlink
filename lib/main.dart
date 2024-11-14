@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:medlink/screens/continued_register.dart';
 import 'package:medlink/screens/man_page.dart';
 import 'package:medlink/screens/my_consult.dart';
 import 'package:medlink/screens/payment_screen.dart';
+import 'package:medlink/screens/register.dart';
 import 'package:medlink/screens/scheduling.dart';
 import 'package:medlink/screens/login.dart';
 
@@ -20,11 +22,14 @@ class MyApp extends StatelessWidget {
             useMaterial3: true),
         initialRoute: '/login',
         routes: {
-          '/': (context) => const ManPage(),
+          '/home': (context) => const ManPage(),
           '/pay': (context) => const PaymentScreen(),
           '/scheduling': (context) => Scheduling(),
           '/consult': (context) => const MyConsult(),
           '/login': (BuildContext context) => const LoginPage(),
+          '/register': (BuildContext context) => const Register(),
+          '/continued-register': (BuildContext context) =>
+              const ContinuedRegister(),
         });
   }
 }

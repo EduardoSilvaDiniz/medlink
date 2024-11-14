@@ -17,7 +17,7 @@ class _ManPageState extends State<ManPage> {
   List<Widget> listBody = const [
     FactoryBodyManPage(),
     FactoryBodyManPage(),
-    FactoryBodyManPage()
+    FactoryBodyManPage(),
   ];
   @override
   Widget build(BuildContext context) {

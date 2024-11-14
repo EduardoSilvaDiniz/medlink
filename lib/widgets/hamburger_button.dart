@@ -13,14 +13,13 @@ class HamburgerButton extends StatelessWidget {
         child: ListView(padding: EdgeInsets.zero, children: [
           _createTopbar(),
           const Divider(),
-          _createOption(Icons.history, "Histórico de consultas"),
+          _createOption(Icons.history, "Histórico de consultas", context),
           _createOptionTopdown(Icons.notifications_outlined, "Notificaçõesa"),
           const Divider(),
-          _createOption(Icons.exit_to_app, "Sair")
+          _createOption(Icons.exit_to_app, "Sair", context)
         ]));
   }
 
-  // ignore: unused_element
   Widget _createTopbar() {
     return Row(children: [
       const Icon(
@@ -37,15 +36,22 @@ class HamburgerButton extends StatelessWidget {
     ]);
   }
 
-  Widget _createOption(IconData icon, String text) {
+  Widget _createOption(IconData icon, String text, BuildContext context) {
     return ListTile(
         leading: Icon(
           icon,
           color: Colors.white,
         ),
         title: Text(text, style: const TextStyle(color: Colors.white)),
-        onTap: () {});
+        onTap: () {
+        if (text == "Sair") {
+          Navigator.pushNamed(context, "/login");
+        }
+      }
+    );
   }
+
+
 
   Widget _createOptionTopdown(IconData icon, String text) {
     return ExpansionTile(

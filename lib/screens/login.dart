@@ -1,19 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: LoginPage());
-  }
-}
-
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -73,7 +59,9 @@ class LoginPage extends StatelessWidget {
                                     const BorderSide(color: Colors.blue)))),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                            Navigator.pushNamed(context, "/home");
+                },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
                             shape: RoundedRectangleBorder(
@@ -87,7 +75,9 @@ class LoginPage extends StatelessWidget {
                       const Text("Ou", style: TextStyle(color: Colors.grey)),
                       const SizedBox(width: 5),
                       GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, "/register");
+                          },
                           child: const Text("Cadastre-se",
                               style: TextStyle(
                                   color: Colors.blue,
