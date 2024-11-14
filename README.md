@@ -1,9 +1,9 @@
 # Projeto da Faculdade
 
-- Disciplina: Desenvolvimento Mobile
-- Professor: Carlos Barros
-- Semestre: 4º Semestre
-- Nome do Projeto: Medlink
+- **Disciplina**: Desenvolvimento Mobile
+- **Professor**: Marnes Cassule
+- **Semestre**: 4º Semestre
+- **Projeto**: Medlink
 
 ## Objetivo
 
@@ -20,3 +20,5 @@ pois as consultas serão realizadas por meio de chamadas de vídeo. Após a cons
 o usuário receberá um documento contendo as orientações sobre medicamentos
 e exames solicitados pelo médico.
 Ao final do atendimento, tanto o cliente quanto o médico poderão avaliar a experiência.
+
+## Demostração
