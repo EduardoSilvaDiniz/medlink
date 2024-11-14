@@ -36,9 +36,9 @@ class ConsultationSectionState extends State<ConsultationSection> {
   Widget _buildConsultationTile(String specialty, String doctor, String date,
       bool isExpanded, ValueChanged<bool> onExpand) {
     return Container(
-        margin: const EdgeInsets.symmetric(vertical: 16.0),
+        margin: const EdgeInsets.all( 10.0),
         decoration: BoxDecoration(
-            color: Colors.blue[900], borderRadius: BorderRadius.circular(20.0)),
+            color: Colors.blue.shade900, borderRadius: BorderRadius.circular(50.0)),
         padding: const EdgeInsets.all(16.0),
         child: Column(children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [

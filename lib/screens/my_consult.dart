@@ -22,11 +22,11 @@ class MyConsultState extends State<MyConsult> {
             children: [
               Padding(
                   padding: EdgeInsets.all(10.0),
-                  child: Text('Consultas Agendadas:',
+                  child: Center(child: Text('Consultas Agendadas:',
                       style: TextStyle(
-                          fontSize: 32, fontWeight: FontWeight.bold))),
+                          fontSize: 30, color: Colors.blue)))),
               Padding(padding: EdgeInsets.all(30.0), child: SearchBarBuild()),
-              ConsultationSection(),
+              ConsultationSection()
             ]));
   }
 }

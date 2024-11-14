@@ -67,16 +67,16 @@ class Scheduling extends StatelessWidget {
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(20),
-                backgroundColor: const Color.fromRGBO(206, 206, 206, 1)),
+                backgroundColor: Colors.blue.shade900),
             onPressed: () {},
             child: Row(children: [
               const Icon(Icons.add,
-                  color: Color.fromRGBO(11, 88, 216, 1), size: 35),
+                  color: Colors.white, size: 35),
               Text(text,
                   style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(38, 38, 38, 1)))
+                      color: Colors.white))
             ])));
   }
 }
