@@ -1,17 +1,22 @@
-<h1>
-Menu Principal
-</h1>
+# Projeto da Faculdade
 
-![menu principal](imagens/man-page.png)
+- Disciplina: Desenvolvimento Mobile
+- Professor: Carlos Barros
+- Semestre: 4º Semestre
+- Nome do Projeto: Medlink
 
-<h1>
-Menu Hamburger
-</h1>
+## Objetivo
 
-![menu hamburger](imagens/menu-Hamburger.png)
+Desenvolver um aplicativo que atenda à necessidade de acesso rápido,
+fácil e econômico a médicos, de forma semelhante ao que o Uber fez
+com o transporte.
 
-<h1>
-Tela de Agendamento
-</h1>
+## Prática
 
-![Tela de Agendamento](imagens/agendamento.png)
+O usuário realiza o cadastro no aplicativo, adiciona um cartão de crédito
+ou débito de sua preferência e está pronto para agendar consultas totalmente online.
+Não há necessidade de atendimentos presenciais,
+pois as consultas serão realizadas por meio de chamadas de vídeo. Após a consulta,
+o usuário receberá um documento contendo as orientações sobre medicamentos
+e exames solicitados pelo médico.
+Ao final do atendimento, tanto o cliente quanto o médico poderão avaliar a experiência.
