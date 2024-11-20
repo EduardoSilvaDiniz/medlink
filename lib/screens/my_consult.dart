@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:medlink/data/reserve.dart';
 import 'package:medlink/widgets/block_consult.dart';
 import 'package:medlink/widgets/searchbar_build.dart';
+
+
+List<Reserve> reservasList = [];
+
+void addListReserve(Reserve novo){
+  reservasList.add(novo);
+  imprimirValores();
+}
+
+void imprimirValores(){
+  for (var element in reservasList) {
+    print("Se añadio ${element.getDoctor()} y ${element.getData()}");
+  }
+}
 
 class MyConsult extends StatefulWidget {
   const MyConsult({super.key});
@@ -17,7 +32,7 @@ class MyConsultState extends State<MyConsult> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(),
-        body: const Column(
+        body:  Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
@@ -26,7 +41,7 @@ class MyConsultState extends State<MyConsult> {
                       style: TextStyle(
                           fontSize: 30, color: Colors.blue)))),
               Padding(padding: EdgeInsets.all(30.0), child: SearchBarBuild()),
-              ConsultationSection()
+              ConsultationSection(reservasList)
             ]));
   }
 }
