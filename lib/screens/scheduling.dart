@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medlink/screens/reservation_page.dart';
 import 'package:medlink/widgets/create_button.dart';
 import 'package:medlink/widgets/searchbar_build.dart';
 
@@ -57,18 +58,22 @@ class Scheduling extends StatelessWidget {
     return ListView.builder(
         itemCount: _items.length,
         itemBuilder: (context, index) {
-          return _addListMeds(_items[index]);
+          return _addListMeds(context,_items[index]);
         });
   }
 
-  Widget _addListMeds(String text) {
+  Widget _addListMeds(BuildContext context,String text) {
     return Padding(
         padding: const EdgeInsets.all(10),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(20),
                 backgroundColor: Colors.blue.shade900),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context)=>ReservationPage(text)));
+            },
             child: Row(children: [
               const Icon(Icons.add,
                   color: Colors.white, size: 35),

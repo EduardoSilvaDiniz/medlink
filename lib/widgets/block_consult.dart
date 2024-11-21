@@ -1,15 +1,51 @@
+
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:medlink/data/reserve.dart';
 
 class ConsultationSection extends StatefulWidget {
-  const ConsultationSection({super.key});
+  final List<Reserve> _reserveList;
+  const ConsultationSection(this._reserveList,{super.key});
 
   @override
   ConsultationSectionState createState() => ConsultationSectionState();
 }
 
+
+//Primero que nada voy a crear una clase que reciba una lista
 class ConsultationSectionState extends State<ConsultationSection> {
+List<Widget> _minhaList = [];
+List<bool> _estados = [];
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _minhaList = createListforShow();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: _minhaList,
+      );
+  }
+  
+
+  List<Widget> createListforShow(){
+    List<Widget> novo = [];
+    for (var element in widget._reserveList) {
+      _estados.add(false);
+      novo.add(_buildConsultationTile(element.getEspecialidade(), element.getDoctor(), element.getData(), element.getExpansed(),_estados.length-1));
+    }
+    return novo; 
+  }
+
+
+/*
+class ConsultationSectionState extends State<ConsultationSection> {
+
+
   bool _isExpanded1 = false;
   bool _isExpanded2 = false;
 
@@ -33,8 +69,11 @@ class ConsultationSectionState extends State<ConsultationSection> {
     ]);
   }
 
+*/
+//Lo unico que me falta hacer es cmbiar los estados para que se expanda
+
   Widget _buildConsultationTile(String specialty, String doctor, String date,
-      bool isExpanded, ValueChanged<bool> onExpand) {
+      bool isExpanded,int index) {
     return Container(
         margin: const EdgeInsets.all( 10.0),
         decoration: BoxDecoration(
@@ -50,10 +89,14 @@ class ConsultationSectionState extends State<ConsultationSection> {
             Row(children: [
               IconButton(
                   icon: const Icon(Icons.add, color: Colors.white),
-                  onPressed: () => onExpand(true)),
+                  onPressed: () {
+                    criarDeNovoALista(true, index);
+                  }),
               IconButton(
                   icon: const Icon(Icons.remove, color: Colors.white),
-                  onPressed: () => onExpand(false))
+                  onPressed: () {
+                    criarDeNovoALista(false, index);
+                  })
             ])
           ]),
           if (isExpanded) _buildExpandedInfo(doctor, date)
@@ -83,4 +126,25 @@ class ConsultationSectionState extends State<ConsultationSection> {
                   child: const Text('Entrar')))
         ]));
   }
+
+  void criarDeNovoALista(bool valor,int index){
+    _estados[index] = valor;
+    setState(() {
+      _minhaList = Novamente();
+    });
+  }
+
+  List<Widget> Novamente(){
+    List<Widget> novo = [];
+    var element;
+    for(int i = 0; i < _estados.length;i++){
+      element = widget._reserveList[i];
+      novo.add(_buildConsultationTile(element.getEspecialidade(), element.getDoctor(), element.getData(), _estados[i],i));
+    }
+    return novo; 
+  }
+
+
+
 }
+
