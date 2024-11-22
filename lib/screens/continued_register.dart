@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medlink/widgets/button_next_page.dart';
+import 'package:medlink/widgets/stylized_text_field.dart';
 
 class ContinuedRegister extends StatelessWidget {
   const ContinuedRegister({super.key});
@@ -25,79 +27,20 @@ class ContinuedRegister extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.bold))
               ]),
-              const SizedBox(height: 150.0),
+              const Spacer(),
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(children: [
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "CPF",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("CPF"),
                     const SizedBox(height: 20),
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "Data de nascimento",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("Data de nascimento"),
                     const SizedBox(height: 20),
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "Celular",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("Celular"),
                     const SizedBox(height: 20),
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "Gênero",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("Gênero"),
                     const SizedBox(height: 60),
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, "/login");
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 100, vertical: 15)),
-                        child: const Text("Cadastrar",
-                            style: TextStyle(color: Colors.white)))
                   ])),
+              ButtonNextPage("Cadastrar", "/login"),
               const Spacer(),
             ])));
   }

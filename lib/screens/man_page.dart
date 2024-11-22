@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:medlink/factorys/factory_body.dart';
 import 'package:medlink/widgets/app_bar_build.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 import 'package:medlink/screens/user_page.dart';
+import 'package:medlink/data/get_data_user.dart';
+import 'package:medlink/widgets/create_button.dart';
 
 class ManPage extends StatefulWidget {
   const ManPage({super.key});
@@ -15,9 +16,9 @@ class _ManPageState extends State<ManPage> {
   int index = 0;
 
   List<Widget> listBody = const [
-    FactoryBodyManPage(),
+    Home(),
     UsersPage(),
-    FactoryBodyManPage(),
+    Home(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,27 @@ class _ManPageState extends State<ManPage> {
               BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
               BottomNavigationBarItem(icon: Icon(Icons.settings), label: '')
             ]));
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      Align(
+          alignment: Alignment.centerLeft,
+          child: Text("Olá, (${GetDataUser.getUserName()}).",
+              style: const TextStyle(fontSize: 24, color: Colors.blue))),
+      const SizedBox(height: 10),
+      const Column(children: [
+        CreateButton(
+            route: "/scheduling",
+            icon: Icons.view_agenda_outlined,
+            title: "AGENDAMENTO")
+      ]),
+    ]);
   }
 }
 

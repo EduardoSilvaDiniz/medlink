@@ -12,29 +12,29 @@ class ConsultationSection extends StatefulWidget {
 }
 
 class ConsultationSectionState extends State<ConsultationSection> {
-  List<Widget> _minhaList = [];
-  final List<bool> _estados = [];
+  List<Widget> _myList = [];
+  final List<bool> _states = [];
   @override
   void initState() {
     super.initState();
-    _minhaList = createListforShow();
+    _myList = createListforShow();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: _minhaList);
+    return Column(children: _myList);
   }
 
   List<Widget> createListforShow() {
     List<Widget> novo = [];
     for (var element in widget._reserveList) {
-      _estados.add(false);
+      _states.add(false);
       novo.add(_buildConsultationTile(
-          element.getEspecialidade(),
+          element.getSpecialty(),
           element.getDoctor(),
           element.getData(),
           element.getExpansed(),
-          _estados.length - 1));
+          _states.length - 1));
     }
     return novo;
   }
@@ -58,12 +58,12 @@ class ConsultationSectionState extends State<ConsultationSection> {
               IconButton(
                   icon: const Icon(Icons.add, color: Colors.white),
                   onPressed: () {
-                    criarDeNovoALista(true, index);
+                    createNewList(true, index);
                   }),
               IconButton(
                   icon: const Icon(Icons.remove, color: Colors.white),
                   onPressed: () {
-                    criarDeNovoALista(false, index);
+                    createNewList(false, index);
                   })
             ])
           ]),
@@ -95,21 +95,21 @@ class ConsultationSectionState extends State<ConsultationSection> {
         ]));
   }
 
-  void criarDeNovoALista(bool valor, int index) {
-    _estados[index] = valor;
+  void createNewList(bool valor, int index) {
+    _states[index] = valor;
     setState(() {
-      _minhaList = again();
+      _myList = again();
     });
   }
 
   List<Widget> again() {
-    List<Widget> novo = [];
+    List<Widget> newList = [];
     Reserve element;
-    for (int i = 0; i < _estados.length; i++) {
+    for (int i = 0; i < _states.length; i++) {
       element = widget._reserveList[i];
-      novo.add(_buildConsultationTile(element.getEspecialidade(),
-          element.getDoctor(), element.getData(), _estados[i], i));
+      newList.add(_buildConsultationTile(element.getSpecialty(),
+          element.getDoctor(), element.getData(), _states[i], i));
     }
-    return novo;
+    return newList;
   }
 }

@@ -38,20 +38,12 @@ class HamburgerButton extends StatelessWidget {
 
   Widget _createOption(IconData icon, String text, BuildContext context) {
     return ListTile(
-        leading: Icon(
-          icon,
-          color: Colors.white,
-        ),
+        leading: Icon(icon, color: Colors.white),
         title: Text(text, style: const TextStyle(color: Colors.white)),
         onTap: () {
-        if (text == "Sair") {
-          Navigator.pushNamed(context, "/login");
-        }
-      }
-    );
+          if (text == "Sair") Navigator.pushNamed(context, "/login");
+        });
   }
-
-
 
   Widget _createOptionTopdown(IconData icon, String text) {
     return ExpansionTile(

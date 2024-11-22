@@ -1,4 +1,4 @@
-class Reserve {
+interface class Reserve {
   late String _doctor;
   late String _specialty;
   late String _data;
@@ -14,7 +14,7 @@ class Reserve {
     return _doctor;
   }
 
-  String getEspecialidade() {
+  String getSpecialty() {
     return _specialty;
   }
 

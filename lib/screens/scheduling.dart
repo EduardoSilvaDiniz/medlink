@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/screens/reservation_page.dart';
-import 'package:medlink/widgets/create_button.dart';
-import 'package:medlink/widgets/searchbar_build.dart';
+import 'package:medlink/widgets/styled_title_button.dart';
 
 class Scheduling extends StatelessWidget {
   Scheduling({super.key});
@@ -41,9 +40,7 @@ class Scheduling extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.all(10.0),
           child: _titleCenter("AGENDAMENTO")),
-      CreateButton.buttonTitle("Selecione uma especialidade", Icons.emergency),
-      const Padding(
-          padding: EdgeInsets.all(30.0), child: SearchBarBuild()),
+      const StyledTitleButton("Selecione uma especialidade", Icons.abc),
       Expanded(child: _createListMeds(context))
     ]);
   }
@@ -58,11 +55,11 @@ class Scheduling extends StatelessWidget {
     return ListView.builder(
         itemCount: _items.length,
         itemBuilder: (context, index) {
-          return _addListMeds(context,_items[index]);
+          return _addListMeds(context, _items[index]);
         });
   }
 
-  Widget _addListMeds(BuildContext context,String text) {
+  Widget _addListMeds(BuildContext context, String text) {
     return Padding(
         padding: const EdgeInsets.all(10),
         child: ElevatedButton(
@@ -71,15 +68,15 @@ class Scheduling extends StatelessWidget {
                 backgroundColor: Colors.blue.shade900),
             onPressed: () {
               Navigator.push(
-                context, 
-                MaterialPageRoute(builder: (context)=>ReservationPage(text)));
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ReservationPage(text)));
             },
             child: Row(children: [
-              const Icon(Icons.add,
-                  color: Colors.white, size: 35),
+              const Icon(Icons.add, color: Colors.white, size: 10),
               Text(text,
                   style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 8,
                       fontWeight: FontWeight.bold,
                       color: Colors.white))
             ])));

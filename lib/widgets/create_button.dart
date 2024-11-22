@@ -20,38 +20,20 @@ class CreateButton extends StatelessWidget {
           },
           child: ClipRRect(
               borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(50),
-                  bottomLeft: Radius.circular(50)),
+                  topRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20)),
               child: Flexible(
                   child: Container(
-                      height: 150,
-                      width: 150,
+                      height: 64,
+                      width: 64,
                       color: Colors.blue,
-                      child: Icon(icon, color: Colors.white, size: 85))))),
+                      child: Icon(icon, color: Colors.white, size: 24))))),
       Text(title,
           style: const TextStyle(
-              fontSize: 20,
-              color: Colors.blueGrey,
-              fontWeight: FontWeight.bold))
-    ]);
-  }
-
-  static Widget buttonTitle(String title, IconData icon) {
-    return Column(children: [
-      ClipRRect(
-          borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(50), bottomLeft: Radius.circular(50)),
-          child: Flexible(
-              child: Container(
-                  height: 150,
-                  width: 150,
-                  color: Colors.blue,
-                  child: Icon(icon, color: Colors.white, size: 85)))),
-      Text(title,
-          style: const TextStyle(
-              fontSize: 20,
+              fontSize: 16,
               color: Colors.blueGrey,
               fontWeight: FontWeight.bold))
     ]);
   }
 }
+

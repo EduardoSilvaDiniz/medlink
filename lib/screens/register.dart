@@ -1,18 +1,6 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: Register());
-  }
-}
+import 'package:medlink/widgets/button_next_page.dart';
+import 'package:medlink/widgets/stylized_text_field.dart';
 
 class Register extends StatelessWidget {
   const Register({super.key});
@@ -43,73 +31,19 @@ class Register extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.bold))
               ]),
-              const SizedBox(height: 150.0),
+              const Spacer(),
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(children: [
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "Nome",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("Nome"),
                     const SizedBox(height: 20),
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "E-mail",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("E-mail"),
                     const SizedBox(height: 20),
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "Senha",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("Senha"),
                     const SizedBox(height: 20),
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "Confirme sua senha",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("Confirme sua senha"),
                     const SizedBox(height: 60),
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, "/continued-register");
-                        },
-                        style: style,
-                        child: const Text("Continuar",
-                            style: TextStyle(color: Colors.white)))
+                    ButtonNextPage("Continuar", "/continued-register"),
                   ])),
               const Spacer()
             ])));

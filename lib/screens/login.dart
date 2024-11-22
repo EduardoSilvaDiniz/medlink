@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medlink/widgets/button_next_page.dart';
+import 'package:medlink/widgets/stylized_text_field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -29,47 +31,11 @@ class LoginPage extends StatelessWidget {
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Column(children: [
-                    TextField(
-                        decoration: InputDecoration(
-                            hintText: "E-mail",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("Email"),
                     const SizedBox(height: 20),
-                    TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                            hintText: "Senha",
-                            filled: true,
-                            fillColor: Colors.white.withOpacity(0.8),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30.0),
-                                borderSide:
-                                    const BorderSide(color: Colors.blue)))),
+                    StylizedTextField("Senha"),
                     const SizedBox(height: 20),
-                    ElevatedButton(
-                        onPressed: () {
-                            Navigator.pushNamed(context, "/home");
-                },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 100, vertical: 15)),
-                        child: const Text("Entrar",
-                            style: TextStyle(color: Colors.white))),
+                    ButtonNextPage("Entrar", "/home"),
                     const SizedBox(height: 10),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       const Text("Ou", style: TextStyle(color: Colors.grey)),
