@@ -1,19 +1,20 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:medlink/data/reserve.dart';
 import 'package:medlink/widgets/block_consult.dart';
 import 'package:medlink/widgets/searchbar_build.dart';
 
-
 List<Reserve> reservasList = [];
 
-void addListReserve(Reserve novo){
+void addListReserve(Reserve novo) {
   reservasList.add(novo);
-  imprimirValores();
+  printValues();
 }
 
-void imprimirValores(){
+void printValues() {
   for (var element in reservasList) {
-    print("Se añadio ${element.getDoctor()} y ${element.getData()}");
+    log("added ${element.getDoctor()} and ${element.getData()}");
   }
 }
 
@@ -32,16 +33,14 @@ class MyConsultState extends State<MyConsult> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(),
-        body:  Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Center(child: Text('Consultas Agendadas:',
-                      style: TextStyle(
-                          fontSize: 30, color: Colors.blue)))),
-              Padding(padding: EdgeInsets.all(30.0), child: SearchBarBuild()),
-              ConsultationSection(reservasList)
-            ]));
+        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Center(
+                  child: Text('Consultas Agendadas:',
+                      style: TextStyle(fontSize: 30, color: Colors.blue)))),
+          const Padding(padding: EdgeInsets.all(30.0), child: SearchBarBuild()),
+          ConsultationSection(reservasList)
+        ]));
   }
 }

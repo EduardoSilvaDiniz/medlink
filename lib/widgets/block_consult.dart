@@ -1,4 +1,3 @@
-
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -6,78 +5,47 @@ import 'package:medlink/data/reserve.dart';
 
 class ConsultationSection extends StatefulWidget {
   final List<Reserve> _reserveList;
-  const ConsultationSection(this._reserveList,{super.key});
+  const ConsultationSection(this._reserveList, {super.key});
 
   @override
   ConsultationSectionState createState() => ConsultationSectionState();
 }
 
-
-//Primero que nada voy a crear una clase que reciba una lista
 class ConsultationSectionState extends State<ConsultationSection> {
-List<Widget> _minhaList = [];
-List<bool> _estados = [];
-@override
+  List<Widget> _minhaList = [];
+  final List<bool> _estados = [];
+  @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _minhaList = createListforShow();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: _minhaList,
-      );
+    return Column(children: _minhaList);
   }
-  
 
-  List<Widget> createListforShow(){
+  List<Widget> createListforShow() {
     List<Widget> novo = [];
     for (var element in widget._reserveList) {
       _estados.add(false);
-      novo.add(_buildConsultationTile(element.getEspecialidade(), element.getDoctor(), element.getData(), element.getExpansed(),_estados.length-1));
+      novo.add(_buildConsultationTile(
+          element.getEspecialidade(),
+          element.getDoctor(),
+          element.getData(),
+          element.getExpansed(),
+          _estados.length - 1));
     }
-    return novo; 
+    return novo;
   }
-
-
-/*
-class ConsultationSectionState extends State<ConsultationSection> {
-
-
-  bool _isExpanded1 = false;
-  bool _isExpanded2 = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(children: [
-      _buildConsultationTile(
-          'Gastroenterologia', 'Dr. João Silva', '2024-09-21', _isExpanded1,
-          (value) {
-        setState(() {
-          _isExpanded1 = value;
-        });
-      }),
-      _buildConsultationTile(
-          'Cardiologia', 'Dr. Maria Oliveira', '2024-09-22', _isExpanded2,
-          (value) {
-        setState(() {
-          _isExpanded2 = value;
-        });
-      })
-    ]);
-  }
-
-*/
-//Lo unico que me falta hacer es cmbiar los estados para que se expanda
 
   Widget _buildConsultationTile(String specialty, String doctor, String date,
-      bool isExpanded,int index) {
+      bool isExpanded, int index) {
     return Container(
-        margin: const EdgeInsets.all( 10.0),
+        margin: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-            color: Colors.blue.shade900, borderRadius: BorderRadius.circular(50.0)),
+            color: Colors.blue.shade900,
+            borderRadius: BorderRadius.circular(50.0)),
         padding: const EdgeInsets.all(16.0),
         child: Column(children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -127,24 +95,21 @@ class ConsultationSectionState extends State<ConsultationSection> {
         ]));
   }
 
-  void criarDeNovoALista(bool valor,int index){
+  void criarDeNovoALista(bool valor, int index) {
     _estados[index] = valor;
     setState(() {
-      _minhaList = Novamente();
+      _minhaList = again();
     });
   }
 
-  List<Widget> Novamente(){
+  List<Widget> again() {
     List<Widget> novo = [];
-    var element;
-    for(int i = 0; i < _estados.length;i++){
+    Reserve element;
+    for (int i = 0; i < _estados.length; i++) {
       element = widget._reserveList[i];
-      novo.add(_buildConsultationTile(element.getEspecialidade(), element.getDoctor(), element.getData(), _estados[i],i));
+      novo.add(_buildConsultationTile(element.getEspecialidade(),
+          element.getDoctor(), element.getData(), _estados[i], i));
     }
-    return novo; 
+    return novo;
   }
-
-
-
 }
-
