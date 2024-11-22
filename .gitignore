@@ -9,6 +9,7 @@ migrate_working_dir/
 *.swp
 .DS_Store
 .history
+.metadata
 
 # IntelliJ related
 .idea/
