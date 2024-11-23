@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:medlink/data/reserve.dart';
 import 'package:medlink/screens/last_reservation.dart';
 import 'package:medlink/screens/my_consult.dart';
@@ -39,6 +40,7 @@ class _ReservationPageState extends State<ReservationPage> {
   bool _choiseDoctor = false;
   DateTime _currentDate = DateTime.now();
   String doctorActual = "";
+  DateFormat formatador = DateFormat('dd/MM/yyyy HH:mm:ss');
 
   Future<void> getDataPickerWidget() async {
     DateTime? date = await showDatePicker(
@@ -77,14 +79,13 @@ class _ReservationPageState extends State<ReservationPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
               Text(widget._specialty,
-                  style: const TextStyle(fontSize: 50, color: Colors.blue)),
+                  style: const TextStyle(fontSize: 24, color: Colors.blue)),
               chooseDoctor(),
               chooseDateAndTime(),
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
                 ElevatedButton(
-                    onPressed: () {
-                      _buttonCancel(context);
-                    },
+                    onPressed: () =>
+                      _buttonCancel(context),
                     child: const Text("Cancelar")),
                 ElevatedButton(
                     onPressed: () {
@@ -184,7 +185,7 @@ class _ReservationPageState extends State<ReservationPage> {
                   },
                   icon: const Icon(Icons.calendar_month_outlined),
                   iconSize: 50)),
-          Text(_currentDate.toString())
+          Text(formatador.format(_currentDate))
         ]));
   }
 

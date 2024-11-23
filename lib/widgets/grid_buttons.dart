@@ -22,7 +22,7 @@ class GridButtons extends StatelessWidget {
       mainAxisSpacing: 10,
       crossAxisCount: 2,
       children: [
-        const CreateButton(route: "/scheduling", icon: Icons.view_agenda_outlined, title: "AGENDAMENTO"),
+        CreateButton(route: _buttonData[0]['route'], icon: _buttonData[0]['icon'], title: _buttonData[0]['title']),
         CreateButton(route: _buttonData[1]['route'], icon: _buttonData[1]['icon'], title: _buttonData[1]['title']),
         CreateButton(route: _buttonData[2]['route'], icon: _buttonData[2]['icon'], title: _buttonData[2]['title']),
         CreateButton(route: _buttonData[3]['route'], icon: _buttonData[3]['icon'], title: _buttonData[3]['title']),

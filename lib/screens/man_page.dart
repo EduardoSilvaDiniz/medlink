@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medlink/data/get_data_user.dart';
 import 'package:medlink/screens/user_page.dart';
 import 'package:medlink/widgets/app_bar_build.dart';
+import 'package:medlink/widgets/create_button.dart';
+import 'package:medlink/widgets/grid_buttons.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
 
 class ManPage extends StatefulWidget {
@@ -14,9 +16,9 @@ class ManPage extends StatefulWidget {
 class _ManPageState extends State<ManPage> {
   int index = 0;
 
-  List<Widget> listBody = const [
+  List<Widget> listBody = [
     Home(),
-    UsersPage(),
+    const UsersPage(),
     Home(),
   ];
 
@@ -40,19 +42,21 @@ class _ManPageState extends State<ManPage> {
 }
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  Home({super.key});
+
+  final ButtonStyle style = ElevatedButton.styleFrom(
+    textStyle: const TextStyle(fontSize: 20),
+    backgroundColor: Colors.transparent, // Set the background color to transparent
+    overlayColor: Colors.transparent,
+    elevation: 0, // Remove the default elevation
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10), // Customize the button's shape
+    ),
+  );
+
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Align(
-          alignment: Alignment.centerLeft,
-          child: Text("Olá, (${GetDataUser.getUserName()}).",
-              style: const TextStyle(fontSize: 24, color: Colors.blue))),
-      const SizedBox(height: 10),
-      ElevatedButton( onPressed: () => Navigator.pushNamed(context, "/scheduling"), child: const Text("AGENDAMENTO")),
-      ElevatedButton( onPressed: () => Navigator.pushNamed(context, "/consult"), child: const Text("MINAS CONSULTAS")),
-      ElevatedButton( onPressed: () => Navigator.pushNamed(context, "/pay"), child: const Text("PAGAMENTOS"))
-    ]);
+    return GridButtons();
   }
 }
