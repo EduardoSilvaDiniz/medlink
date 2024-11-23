@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medlink/widgets/create_button.dart';
 
-class GridButtons extends StatefulWidget {
-  const GridButtons({super.key});
+class GridButtons extends StatelessWidget {
+  GridButtons({super.key});
 
-  @override
-  State<GridButtons> createState() => _GridButtons();
-}
-
-class _GridButtons extends State<GridButtons> {
   final List<Map<String, dynamic>> _buttonData = [
     {'title': 'AGENDAMENTO', 'icon': Icons.view_agenda_outlined, 'route': '/scheduling' },
     {'title': 'CENTRAL 24 HORAS', 'icon': Icons.phone_callback_outlined, 'route': '/' },

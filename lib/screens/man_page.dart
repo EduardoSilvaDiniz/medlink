@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:medlink/data/get_data_user.dart';
+import 'package:medlink/screens/user_page.dart';
 import 'package:medlink/widgets/app_bar_build.dart';
 import 'package:medlink/widgets/hamburger_button.dart';
-import 'package:medlink/screens/user_page.dart';
-import 'package:medlink/data/get_data_user.dart';
-import 'package:medlink/widgets/create_button.dart';
 
 class ManPage extends StatefulWidget {
   const ManPage({super.key});
@@ -20,6 +19,7 @@ class _ManPageState extends State<ManPage> {
     UsersPage(),
     Home(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,13 +50,9 @@ class Home extends StatelessWidget {
           child: Text("Olá, (${GetDataUser.getUserName()}).",
               style: const TextStyle(fontSize: 24, color: Colors.blue))),
       const SizedBox(height: 10),
-      const Column(children: [
-        CreateButton(
-            route: "/scheduling",
-            icon: Icons.view_agenda_outlined,
-            title: "AGENDAMENTO")
-      ]),
+      ElevatedButton( onPressed: () => Navigator.pushNamed(context, "/scheduling"), child: const Text("AGENDAMENTO")),
+      ElevatedButton( onPressed: () => Navigator.pushNamed(context, "/consult"), child: const Text("MINAS CONSULTAS")),
+      ElevatedButton( onPressed: () => Navigator.pushNamed(context, "/pay"), child: const Text("PAGAMENTOS"))
     ]);
   }
 }
-

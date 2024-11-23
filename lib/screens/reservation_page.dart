@@ -37,7 +37,7 @@ class ReservationPage extends StatefulWidget {
 
 class _ReservationPageState extends State<ReservationPage> {
   bool _choiseDoctor = false;
-  var _currentDate = DateTime.now();
+  DateTime _currentDate = DateTime.now();
   String doctorActual = "";
 
   Future<void> getDataPickerWidget() async {
@@ -127,8 +127,8 @@ class _ReservationPageState extends State<ReservationPage> {
                       child: const Text("não")),
                   TextButton(
                       onPressed: () {
-                        addListReserve(Reserve(doctorActual,
-                            widget._specialty, _currentDate.toString()));
+                        addListReserve(Reserve(doctorActual, widget._specialty,
+                            _currentDate.toString()));
                         Navigator.pop(context);
 
                         Navigator.pushReplacement(

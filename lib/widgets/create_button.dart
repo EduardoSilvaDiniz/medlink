@@ -15,9 +15,7 @@ class CreateButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       InkWell(
-          onTap: () {
-            Navigator.pushNamed(context, route);
-          },
+          onTap: () => Navigator.pushNamed(context, route),
           child: ClipRRect(
               borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(20),
@@ -36,4 +34,3 @@ class CreateButton extends StatelessWidget {
     ]);
   }
 }
-
