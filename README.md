@@ -20,5 +20,3 @@ pois as consultas serão realizadas por meio de chamadas de vídeo. Após a cons
 o usuário receberá um documento contendo as orientações sobre medicamentos
 e exames solicitados pelo médico.
 Ao final do atendimento, tanto o cliente quanto o médico poderão avaliar a experiência.
-
-## Demostração
